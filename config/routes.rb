@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#hello'
+  resources :flights
+  resources :austauschschulers
+  root 'austauschschulers#index'
 end

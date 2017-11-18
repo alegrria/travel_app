@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @austauschschuler.name %>
+</p>
+
+<p>
+  <strong>Family name:</strong>
+  <%= @austauschschuler.family_name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @austauschschuler.birthday %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @austauschschuler.email %>
+</p>
+
+<p>
+  <strong>Departure time:</strong>
+  <%= @austauschschuler.departure_time %>
+</p>
+
+<p>
+  <strong>Arrival time:</strong>
+  <%= @austauschschuler.arrival_time %>
+</p>
+
+<%= link_to 'Edit', edit_austauschschuler_path(@austauschschuler) %> |
+<%= link_to 'Back', austauschschulers_path %>

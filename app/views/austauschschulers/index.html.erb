@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Austauschschulers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Family name</th>
+      <th>Birthday</th>
+      <th>Email</th>
+      <th>Departure time</th>
+      <th>Arrival time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @austauschschulers.each do |austauschschuler| %>
+      <tr>
+        <td><%= austauschschuler.name %></td>
+        <td><%= austauschschuler.family_name %></td>
+        <td><%= austauschschuler.birthday %></td>
+        <td><%= austauschschuler.email %></td>
+        <td><%= austauschschuler.departure_time %></td>
+        <td><%= austauschschuler.arrival_time %></td>
+        <td><%= link_to 'Show', austauschschuler %></td>
+        <td><%= link_to 'Edit', edit_austauschschuler_path(austauschschuler) %></td>
+        <td><%= link_to 'Destroy', austauschschuler, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Austauschschuler', new_austauschschuler_path %>
