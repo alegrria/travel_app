@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118215812) do
+ActiveRecord::Schema.define(version: 20171119001015) do
 
   create_table "austauschschulers", force: :cascade do |t|
     t.string   "name"
     t.string   "family_name"
-    t.datetime "birthday"
+    t.date     "birthday"
     t.string   "email"
     t.datetime "departure_time"
     t.datetime "arrival_time"
@@ -23,11 +23,18 @@ ActiveRecord::Schema.define(version: 20171118215812) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "austauschschulers_flights", id: false, force: :cascade do |t|
+    t.integer "austauschschuler_id"
+    t.integer "flight_id"
+    t.index ["austauschschuler_id"], name: "index_austauschschulers_flights_on_austauschschuler_id"
+    t.index ["flight_id"], name: "index_austauschschulers_flights_on_flight_id"
+  end
+
   create_table "flights", force: :cascade do |t|
     t.string   "departure"
     t.string   "arrival"
     t.datetime "departure_time"
-    t.datetime "arrival_date"
+    t.datetime "arrival_time"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

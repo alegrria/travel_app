@@ -21,4 +21,5 @@ class AustauschschulerTest < ActiveSupport::TestCase
   end
 
 
+
 end
