@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20171119004255) do
     t.string   "family_name"
     t.date     "birthday"
     t.string   "email"
-    t.datetime "departure_time"
-    t.datetime "arrival_time"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "departure"
+    t.string   "arrival"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "austauschschulers_flights", id: false, force: :cascade do |t|

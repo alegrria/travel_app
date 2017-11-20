@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :birthday %>
-    <%= f.datetime_select :birthday %>
+    <%= f.date_select :birthday, :order => [:day, :month, :year] %>
   </div>
 
   <div class="field">
@@ -32,13 +32,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :departure_time %>
-    <%= f.datetime_select :departure_time %>
+    <%= f.label :departure %>
+    <%= f.text_field :departure%>
   </div>
 
   <div class="field">
-    <%= f.label :arrival_time %>
-    <%= f.datetime_select :arrival_time %>
+    <%= f.label :arrival %>
+    <%= f.text_field :arrival %>
   </div>
 
   <div class="actions">

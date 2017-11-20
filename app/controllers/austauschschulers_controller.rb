@@ -25,6 +25,12 @@ class AustauschschulersController < ApplicationController
   # POST /austauschschulers.json
   def create
     @austauschschuler = Austauschschuler.new(austauschschuler_params)
+    params[:flight_ids].each do |x|
+      @austauschschuler.flights << Flight.find(x)
+      end
+    #:austauschschuler_id = @austauschschuler.id
+    #:flight_id = @austauschschuler.flight_id
+    #@austauschschuler.flights << Flight.find flight_id
 
     respond_to do |format|
       if @austauschschuler.save
@@ -69,6 +75,6 @@ class AustauschschulersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def austauschschuler_params
-      params.require(:austauschschuler).permit(:name, :family_name, :birthday, :email, :departure_time, :arrival_time)
+      params.require(:austauschschuler).permit(:name, :family_name, :birthday, :email, :flight_ids)
     end
 end

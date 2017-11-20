@@ -21,14 +21,40 @@
 </p>
 
 <p>
-  <strong>Departure time:</strong>
-  <%= @austauschschuler.departure_time %>
+  <strong>Departure:</strong>
+  <%= @austauschschuler.departure %>
 </p>
 
 <p>
-  <strong>Arrival time:</strong>
-  <%= @austauschschuler.arrival_time %>
+  <strong>Arrival:</strong>
+  <%= @austauschschuler.arrival%>
 </p>
 
 <%= link_to 'Edit', edit_austauschschuler_path(@austauschschuler) %> |
 <%= link_to 'Back', austauschschulers_path %>
+
+<h3>Flights</h3>
+
+<table>
+  <thead>
+  <tr>
+    <th>Flight ID</th>
+    <th>Departure</th>
+    <th>Arrival</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @austauschschuler.flights.each do |flight| %>
+      <tr>
+        <td><%= flight.id %></td>
+        <td><%= flight.departure %></td>
+        <td><%= flight.arrival %></td>
+        <td><%= link_to "Delete", flight, method: :destroy, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
