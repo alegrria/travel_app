@@ -25,6 +25,9 @@ class FlightsController < ApplicationController
   # POST /flights.json
   def create
     @flight = Flight.new(flight_params)
+    (flight_params[:austauschschuler_ids] || []).map(&:to_i).compact.each do |x|
+      @flight.austauschschulers << Austauschschuler.find(x) unless x == 0
+    end
 
     respond_to do |format|
       if @flight.save
@@ -69,6 +72,6 @@ class FlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
-      params.require(:flight).permit(:departure, :arrival, :departure_time, :arrival_time)
+      params.require(:flight).permit(:departure, :arrival, :departure_time, :arrival_time, austauschschuler_ids: [] )
     end
 end

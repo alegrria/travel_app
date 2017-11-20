@@ -41,6 +41,10 @@
     <%= f.text_field :arrival %>
   </div>
 
+    <div class="field">
+      <%= f.label :flight_ids, 'Choose flights' %>
+      <%= f.collection_select :flight_ids, Flight.all, :id, :departure, {}, {multiple: true} %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

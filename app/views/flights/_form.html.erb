@@ -31,6 +31,11 @@
     <%= f.datetime_select :arrival_time %>
   </div>
 
+    <div class="field">
+      <%= f.label :austauschschuler_ids, 'Choose austauschschulers' %>
+      <%= f.collection_select :austauschschuler_ids, Austauschschuler.all, :id, :departure, {}, {multiple: true} %>
+    </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
