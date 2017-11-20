@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The application consists of two pages:
+austauschschulers/ and flights/.
 
-Things you may want to cover:
+An Austauschschuler can be created with a name, last name, birthday, email, departure and arrival places.
+A Flight is created with departure, arrival, departure time, arrival time.
 
-* Ruby version
+When creating an Austauschschuler, one can assign flights to it.
+The same is for Flight. 
 
-* System dependencies
+One can also delete flights and Austauschschulers from appropriate pages.
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
